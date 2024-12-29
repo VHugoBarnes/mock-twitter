@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Bookmarks extends Model
 {
     use HasFactory;
+
+    protected $table = 'tweet_bookmark';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
+    # Fillable
+    protected $fillable = [
+        'tweet_id',
+        'user_id',
+    ];
+    protected $connection = 'pgsql';
 }
